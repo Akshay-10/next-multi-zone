@@ -2,18 +2,20 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   async rewrites() {
+    const zoneOneDomain = process.env.ZONE_ONE_DOMAIN || 'http://localhost:3001';
+    
     return [
         {
             source: '/zone-one',
-            destination: `${process.env.ZONE_ONE_DOMAIN}/`,
+            destination: `${zoneOneDomain}/`,
         },
         {
             source: '/zone-one/:path+',
-            destination: `${process.env.ZONE_ONE_DOMAIN}/:path+`,
+            destination: `${zoneOneDomain}/:path+`,
         },
         {
             source: '/zone-one-static/:path+',
-            destination: `${process.env.ZONE_ONE_DOMAIN}/zone-one-static/:path+`,
+            destination: `${zoneOneDomain}/zone-one-static/:path+`,
         }
     ];
 }
