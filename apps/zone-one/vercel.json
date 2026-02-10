@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd ../.. && pnpm install && pnpm build --filter=zone-one",
+  "installCommand": "pnpm install",
+  "framework": "nextjs"
+}
